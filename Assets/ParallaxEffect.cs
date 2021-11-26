@@ -24,10 +24,8 @@ public class ParallaxEffect : MonoBehaviour
         float moveCostX = currentPos == lastPos ? 0 : (currentPos.x-lastPos.x);
         float moveCostY = currentPos == lastPos ? 0 : (currentPos.y-lastPos.y);
 
-        if(moveCostX > 0 || moveCostX < 0)
+        if((moveCostX > 0 || moveCostX < 0) || (moveCostY > 0 || moveCostY < 0))
             lastPos = currentPos;
-        if(moveCostY > 0 || moveCostY < 0)
-            lastPos = currentPos;   
 
         foreach(SpriteRenderer back in backgrounds)
         {
